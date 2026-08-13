@@ -15,6 +15,7 @@ const successMsg = document.getElementById("successMsg");
 
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const MOBILE_REGEX = /^[0-9]{10}$/;
+const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
 
 /* Updates one field's error text and border color */
 function setStatus(field, errorId, message) {
@@ -72,14 +73,21 @@ function checkMobile() {
 
 function checkPassword() {
   const value = passwordField.value;
+
   if (value === "") {
     setStatus(passwordField, "errPassword", "Please enter your password.");
     return false;
   }
-  if (value.length < 8) {
-    setStatus(passwordField, "errPassword", "Password must contain at least 8 characters.");
+
+  if (!PASSWORD_REGEX.test(value)) {
+    setStatus(
+      passwordField,
+      "errPassword",
+      "Password must be at least 8 characters and contain a letter and a number."
+    );
     return false;
   }
+
   setStatus(passwordField, "errPassword", "");
   return true;
 }
