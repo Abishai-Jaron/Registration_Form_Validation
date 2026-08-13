@@ -31,11 +31,11 @@ function setStatus(field, errorId, message) {
 function checkFullName() {
   const value = fullNameField.value.trim();
   if (value === "") {
-    setStatus(fullNameField, "errFullName", "Full name is required.");
+    setStatus(fullNameField, "errFullName", "Please enter your full name.");
     return false;
   }
   if (value.length < 3) {
-    setStatus(fullNameField, "errFullName", "Enter at least 3 characters.");
+    setStatus(fullNameField, "errFullName", "Please enter at least 3 characters.");
     return false;
   }
   setStatus(fullNameField, "errFullName", "");
@@ -45,11 +45,11 @@ function checkFullName() {
 function checkEmail() {
   const value = emailField.value.trim();
   if (value === "") {
-    setStatus(emailField, "errEmail", "Email is required.");
+    setStatus(emailField, "errEmail", "Please enter your email address.");
     return false;
   }
   if (!EMAIL_REGEX.test(value)) {
-    setStatus(emailField, "errEmail", "Enter a valid email address.");
+    setStatus(emailField, "errEmail", "Please enter a valid email address.");
     return false;
   }
   setStatus(emailField, "errEmail", "");
@@ -59,11 +59,11 @@ function checkEmail() {
 function checkMobile() {
   const value = mobileField.value.trim();
   if (value === "") {
-    setStatus(mobileField, "errMobile", "Mobile number is required.");
+    setStatus(mobileField, "errMobile", "Please enter your mobile number.");
     return false;
   }
   if (!MOBILE_REGEX.test(value)) {
-    setStatus(mobileField, "errMobile", "Enter a valid 10-digit number.");
+    setStatus(mobileField, "errMobile", "Please enter a valid 10-digit mobile number.");
     return false;
   }
   setStatus(mobileField, "errMobile", "");
@@ -73,11 +73,11 @@ function checkMobile() {
 function checkPassword() {
   const value = passwordField.value;
   if (value === "") {
-    setStatus(passwordField, "errPassword", "Password is required.");
+    setStatus(passwordField, "errPassword", "Please enter your password.");
     return false;
   }
   if (value.length < 8) {
-    setStatus(passwordField, "errPassword", "Minimum 8 characters required.");
+    setStatus(passwordField, "errPassword", "Password must contain at least 8 characters.");
     return false;
   }
   setStatus(passwordField, "errPassword", "");
@@ -87,7 +87,7 @@ function checkPassword() {
 function checkConfirmPassword() {
   const value = confirmPasswordField.value;
   if (value === "") {
-    setStatus(confirmPasswordField, "errConfirmPassword", "Please confirm your password.");
+    setStatus(confirmPasswordField, "errConfirmPassword", "Please re-enter your password.");
     return false;
   }
   if (value !== passwordField.value) {
