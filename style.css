@@ -80,10 +80,12 @@ body {
 
 .text-box.invalid {
   border-color: var(--error);
+  background-color: #FEF2F2;
 }
 
 .text-box.valid {
   border-color: var(--success);
+  background-color: #F0FDF4;
 }
 
 .err {
