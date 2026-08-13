@@ -134,3 +134,22 @@ body {
   color: #8A97A3;
   font-size: 0.85rem;
 }
+@media (max-width: 576px) {
+
+  .site-wrap {
+    padding: 30px 15px;
+  }
+
+  .panel {
+    padding: 24px 20px;
+  }
+
+  .site-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+}
